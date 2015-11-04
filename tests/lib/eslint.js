@@ -2367,7 +2367,7 @@ describe("eslint", function() {
             }, filename);
 
             assert.equal(messages.length, 1);
-            assert.equal(messages[0].message, "Parsing error: Illegal return statement");
+            assert.equal(messages[0].message, "Parsing error: 'return' outside of function");
         });
 
         it("should not parse global return when Node.js environment is false", function() {
@@ -2375,7 +2375,7 @@ describe("eslint", function() {
             var messages = eslint.verify("return;", {}, filename);
 
             assert.equal(messages.length, 1);
-            assert.equal(messages[0].message, "Parsing error: Illegal return statement");
+            assert.equal(messages[0].message, "Parsing error: 'return' outside of function");
         });
 
         it("should properly parse JSX when passed ecmaFeatures", function() {
